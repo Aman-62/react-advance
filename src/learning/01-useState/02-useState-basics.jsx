@@ -8,7 +8,7 @@ const UseStateBasics = () => {
   // console.log(useState(10))
 
   const handleClick = () => {
-    // number++
+    // number++ ERROR
     setNumber(number + 1)
   }
 
