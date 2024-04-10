@@ -10,6 +10,7 @@ const UseStateBasics = () => {
   const handleClick = () => {
     // number++ ERROR
     setNumber(number + 1)
+    console.log(number)
   }
 
   return (
