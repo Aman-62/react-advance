@@ -10,6 +10,13 @@
 - react-router-dom
 - react redux-toolkit
 
+### General Rules of Hooks
+
+- starts with "use" (both react and custom hooks)
+- invoke inside function/component body
+- don't call hooks conditionally
+- set functions don't update state immediately
+
 ### useState
 
 - useSate hook
@@ -29,9 +36,22 @@ By changing the component's state or props. When the component's state or props 
 
 When the parent element re-renders, even if the component's state or props have not changed.
 
-### General Rules of Hooks
+### useState weird behavior
 
-- starts with "use" (both react and custom hooks)
-- invoke inside function/component body
-- don't call hooks conditionally
-- set functions don't update state immediately
+Keep in mind that the state update function setState does not immediately mutate the state. Instead, it schedules an update to the state and tells React that it needs to re-render the component. The actual state update will be performed as part of the next rendering cycle. Be mindful when you need to set state value based on a different state value.
+
+If you want to update the state immediately and synchronously, you can pass a function to setState that receives the previous state as an argument and returns the new state.
+
+This can be useful if you need to update the state based on the previous state, or if you need to update the state synchronously.
+
+### useEffect
+
+useEffect is a hook in React that allows you to perform side effects in function components. Basically any work outside of the component. Some examples of side effects are: subscriptions, fetching data, directly updating the DOM, event listeners, timers, etc.
+
+- useEffect hook
+- accepts two arguments (second optional)
+- first argument - cb function
+- second argument - dependency array
+- by default runs on each render (initial and re-render)
+- cb can't return promise (so can't make it async)
+- if dependency array empty [] runs only on initial render
