@@ -3,6 +3,12 @@ import { useEffect, useState } from "react";
 const UseEffectBasics = () => {
   const [number, setNumber] = useState(0);
 
+  // useEffect(callBackFnc(), dependency[]);
+
+  // useEffect(function(){}); <-- this callback function runs on initial render as well re-renders
+  // useEffect(function(){}, []); <-- this callback function only runs on initial render
+  // useEffect(function(){}, [number]); <-- this callback function only runs on initial render and when number changes
+
   useEffect(() => {
     console.log("Hello World!");
   }, []);

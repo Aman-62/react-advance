@@ -4,13 +4,23 @@ const UseEffectMultiple = () => {
   const [numberOne, setNumberOne] = useState(0);
   const [numberTwo, setNumberTwo] = useState(100);
 
+  // callback function runs at initial render and when numberOne state updates
   useEffect(() => {
-    console.log("Hello From FIRST useEffect!");
+    console.log("Hello From FIRST useEffect! " + numberOne + " " + numberTwo);
   }, [numberOne]);
 
+  // callback function runs at initial render and when numberOne and numberTwo state updates
   useEffect(() => {
-    console.log("Hello From SECOND useEffect!");
+    console.log("Hello From SECOND useEffect! " + numberOne + " " + numberTwo);
   }, [numberOne, numberTwo]);
+
+  useEffect(() => {
+    console.log("Hello From THIRD useEffect!");
+  }, []);
+
+  useEffect(() => {
+    console.log("Hello From FOURTH useEffect!");
+  });
 
   return (
     <div>

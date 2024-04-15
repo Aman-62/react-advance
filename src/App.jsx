@@ -1,9 +1,9 @@
-import UseEffectMultiple from "./learning/02-useEffect/02-useEffect-multiple";
+import MultipleReturnsFetchData from "./learning/03-conditional-render/02-multiple-returns-fetch-date";
 
 function App() {
   return (
     <main className="container mx-auto py-10 px-2">
-      <UseEffectMultiple />
+      <MultipleReturnsFetchData />
     </main>
   );
 }
