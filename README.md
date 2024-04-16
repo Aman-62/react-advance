@@ -55,3 +55,23 @@ useEffect is a hook in React that allows you to perform side effects in function
 - by default runs on each render (initial and re-render)
 - cb can't return promise (so can't make it async)
 - if dependency array empty [] runs only on initial render
+
+### short circuit
+
+Truthy And Falsy
+Falsy -> 0, '', undefined, null, NaN
+
+const x = 0;
+const y = 1;
+
+In JavaScript, short-circuit evaluation is a technique that allows you to use logical operators (such as && and ||) to perform conditional evaluations in a concise way.
+
+The && operator (logical AND) returns the first operand if it is "falsy", or the second operand if the first operand is "truthy".
+console.log("===&&===");
+console.log(x && y);
+console.log(y && x);
+
+The || operator (logical OR) returns the first operand if it is "truthy", or the second operand if the first operand is "falsy".
+console.log("===||===");
+console.log(x || y);
+console.log(y || x);
