@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-const url = "https://api.github.com/users/QuincyLarson";
-
 const MultipleReturnsFetchData = () => {
   //* Learning
   const someObj = {
@@ -46,11 +44,12 @@ const MultipleReturnsFetchData = () => {
   // loading - waiting for data to arrive (display loading screen)
   // error - there was an error (display error screen)
   // success - received data (display data)
-
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
   const [user, setUser] = useState(null);
+
+  const url = "https://api.github.com/users/QuincyLarson";
 
   useEffect(() => {
     // async function for fetching data
